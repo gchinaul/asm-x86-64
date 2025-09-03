@@ -1,7 +1,8 @@
+; https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf
 ; https://www.youtube.com/watch?v=wFvxw7v-lg0
 ; nasm -f elf64 -o ft_strlen.o ft_strlen.s
 ; gcc -c main.c
-; gcc main.o ft_strlen.o -o test_prog
+; gcc -no-pie main.o ft_strlen.o -o test_prog
 
 section .text
     global ft_strlen
