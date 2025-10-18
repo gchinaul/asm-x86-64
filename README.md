@@ -1,4 +1,9 @@
-Assembleur x86-64
+Asm x86-64
+
+- [Intel Software Developer Manual](https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html)
+- [System V ABI](https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf)
+- [Linux Syscall Table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+- [NASM Documentation](https://nasm.us/docs.php)
 
 ### Prérequis
 - **nasm** (Netwide Assembler)
@@ -8,34 +13,6 @@ Assembleur x86-64
 ```bash
 # Ubuntu/Debian
 sudo apt-get install nasm gcc make
-
-# macOS
-brew install nasm
-```
-
-### Commandes de compilation
-
-```bash
-# Compiler la partie obligatoire
-make
-
-# Compiler avec les bonus
-make bonus
-
-# Compiler et tester
-make test
-
-# Nettoyer
-make clean      # Supprime les .o
-make fclean     # Supprime tout
-make re         # Recompile tout
-```
-
-### Script de test automatisé
-```bash
-chmod +x test.sh
-./test.sh
-```
 
 ### Registres x86-64
 - **rax** : Valeur de retour, registre accumulateur
@@ -59,8 +36,3 @@ chmod +x test.sh
 - **errno** : Variable globale d'erreur
 - **__errno_location** : Fonction pour obtenir l'adresse d'errno
 - Vérification des valeurs de retour des syscalls
-
-- [Intel Software Developer Manual](https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html)
-- [System V ABI](https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf)
-- [Linux Syscall Table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
-- [NASM Documentation](https://nasm.us/docs.php)
