@@ -6,7 +6,7 @@
 /*   By: gchinaul <gchinaul@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 14:20:44 by gchinaul          #+#    #+#             */
-/*   Updated: 2025/12/18 14:21:21 by gchinaul         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:26:38 by gchinaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ft_list_push_front_bonus:
 	mov rcx, [rdi]		; rcx = *gebin_list
 	mov [rax + 8], rcx	; *begin_list = new_node
 
-	mov [rdi, rax]		; *begin_list = new_node
+	mov [rdi], rax		; *begin_list = new_node
 	ret
 
 .malloc_error:
