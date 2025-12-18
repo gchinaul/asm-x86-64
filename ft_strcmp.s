@@ -14,7 +14,7 @@ xor rax, rax ; rax = 0 (index)
     mov cl, byte [rdi + rax] ; load char from s1
     mov dl, byte [rsi + rax] ; load char from s2
 
-    cmp cl,cl ; compare characters
+    cmp cl,dl ; compare characters
     jne .diff ; if different, go to diff
 
     test cl, cl ; check if reached end of string
