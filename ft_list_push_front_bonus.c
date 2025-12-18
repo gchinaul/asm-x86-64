@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_push_front_bonus.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gchinaul <gchinaul@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/18 14:20:44 by gchinaul          #+#    #+#             */
+/*   Updated: 2025/12/18 14:21:21 by gchinaul         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 section .text
 	global ft_list_push_front_bonus
 	extern malloc
@@ -5,7 +17,7 @@ section .text
 ft_list_push_front_bonus:
 	; rdi = t_list **begin_list
 	; rsi = void *data
-	; return value in rax (new element)
+	; return: new node in rax (0 or error)
 
 	test rdi, rdi		; check if begin_list is NULL
 	jz .error
@@ -24,12 +36,13 @@ ft_list_push_front_bonus:
 	pop rdi			; restore begin_list
 
 	; Set new node data
-	nov [rax], rsi		; new_node->data = data
+	mov [rax], rsi		; new_node->data = data
 
 	; Set new node next
 	mov rcx, [rdi]		; rcx = *gebin_list
 	mov [rax + 8], rcx	; *begin_list = new_node
 
+	mov [rdi, rax]		; *begin_list = new_node
 	ret
 
 .malloc_error:
